@@ -8,6 +8,7 @@ Requires=docker.service
 WorkingDirectory=/var/lib/kubelet
 ExecStart={{BIN_PATH}}/kubelet \
   --address={{NODE_IP}} \
+  --cgroup-driver=systemd \
   --hostname-override={{NODE_IP}} \
   --pod-infra-container-image=registry.cn-hangzhou.aliyuncs.com/imooc/pause-amd64:3.0 \
   --kubeconfig=/etc/kubernetes/kubelet.kubeconfig \
